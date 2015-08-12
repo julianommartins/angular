@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html ng-app="carrosApp">
+    <head>
+    
+        <title>Hello World!</title>
+        <script src= "js/angular.min.js"></script>
+        <link rel="stylesheet" href="css/bootstrap.css">
+        <!-- Criaremos um controller -->
+        <script src="js/controller.js"></script>
+        
+        
+    </head>
+    <body ng-controller="carrosCtrl">
+    <div class="page-header">
+        Listagem de Carros
+    </div>
+    
+    <ul>
+        <li ng-repeat="carro in carros">
+            <span>{{carro.name}}</span>
+            <p>{{carro.historia}}</p>
+        </li>
+    </ul>
+        
+        <p>O Angular tem um esquema de unit tests animal! Vale a pena pesquisar. Cria mock etc</p>
+    </body>
+</html>

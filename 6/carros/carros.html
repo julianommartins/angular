@@ -1,0 +1,33 @@
+<div class="page-header">
+    Busca de Carros
+</div>
+        
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-2">
+      <!--Janela de busca-->
+
+      Pesquisar: <input ng-model="query">
+        Ordenar por:
+        <select ng-model="orderProp">
+            <option value="name">Nome</option>
+            <option value="ano">Ano</option>
+        </select>
+
+    </div>
+    <div class="col-md-10">
+      <!--Resultado da Busca -->
+
+      <ul class="carros">
+        <li ng-repeat="carro in carros | filter:query | orderBy:orderProp">
+          <a href="https://www.google.com.br/?gws_rd=ssl#q={{carro.name}}">{{carro.name}}</a> - {{carro.ano}}
+          <p>{{carro.historia}}</p>
+          <p><a href="#/carros/{{carro.name}}">mais detalhes</a></p>
+        </li>
+      </ul>
+
+    </div>
+  </div>
+</div>
+
+<p>Exercicio - Implementar a pagina de mais detalhes do carro, adicionando mais informacoes ao arquivo de carros (json) e os exibindo. Sugestao: utilizar imagem</p>

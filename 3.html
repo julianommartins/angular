@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html ng-app="carrosApp">
+    <head>
+    
+        <title>Hello World!</title>
+        <script src= "js/angular.min.js"></script>
+        <link rel="stylesheet" href="css/bootstrap.css">
+        <!-- Criaremos um controller -->
+        <script src="js/controller.js"></script>
+        
+        
+    </head>
+    <body ng-controller="carrosCtrl">
+    <div class="page-header">
+        Busca de Carros
+    </div>
+    
+        
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-2">
+      <!--Janela de busca-->
+
+      Pesquisar: <input ng-model="query">
+
+    </div>
+    <div class="col-md-10">
+      <!--Resultado da Busca -->
+
+      <ul class="carros">
+        <li ng-repeat="carro in carros | filter:query">
+          {{carro.name}}
+          <p>{{carro.historia}}</p>
+        </li>
+      </ul>
+
+    </div>
+  </div>
+</div>
+        
+    </body>
+</html>
